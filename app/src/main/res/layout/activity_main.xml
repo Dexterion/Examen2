@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.hermon.geolocalizacion.MainActivity">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:background="@drawable/a449444" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hiker’s app "
+        android:textColor="#000000"
+        android:textSize="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:id="@+id/Title"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Latitude: "
+        android:textColor="#000000"
+        android:textSize="20dp"
+        android:layout_below="@+id/Title"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="50dp"
+        android:id="@+id/Lat"
+        android:layout_alignEnd="@+id/Speed" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0.0"
+        android:textColor="#000000"
+        android:textSize="20dp"
+        android:id="@+id/LAtitude"
+        android:layout_above="@+id/Long"
+        android:layout_toEndOf="@+id/Title" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Longitude: "
+        android:textColor="#000000"
+        android:textSize="20dp"
+        android:layout_below="@+id/Lat"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="10dp"
+        android:id="@+id/Long"
+        android:layout_alignEnd="@+id/Lat" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0.0"
+        android:textColor="#000000"
+        android:textSize="20dp"
+        android:id="@+id/Longitude"
+        android:layout_above="@+id/Acu"
+        android:layout_toEndOf="@+id/Title" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Accuracy: "
+        android:textColor="#000000"
+        android:textSize="20dp"
+        android:layout_below="@+id/Long"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="10dp"
+        android:id="@+id/Acu"
+        android:layout_alignEnd="@+id/Lat" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0.0"
+        android:textColor="#000000"
+        android:textSize="20dp"
+        android:id="@+id/Acuracy"
+        android:layout_alignTop="@+id/Acu"
+        android:layout_toEndOf="@+id/Title" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Speed: "
+        android:textColor="#000000"
+        android:textSize="20dp"
+        android:layout_below="@+id/Acu"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="10dp"
+        android:id="@+id/Speed"
+        android:layout_toStartOf="@+id/Title" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0.0"
+        android:textColor="#000000"
+        android:textSize="20dp"
+        android:id="@+id/speed"
+        android:layout_alignTop="@+id/Speed"
+        android:layout_toEndOf="@+id/Title" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Address: "
+        android:textColor="#ffffff"
+        android:textSize="25dp"
+        android:id="@+id/Address"
+        android:textStyle="bold"
+        android:layout_below="@+id/speed"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="65dp"
+        android:background="#3a3a3a" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-------------------"
+        android:textColor="#ffffff"
+        android:textSize="25dp"
+        android:id="@+id/Location"
+        android:textStyle="bold"
+        android:layout_below="@+id/Address"
+        android:layout_centerHorizontal="true"
+        android:background="#3a3a3a" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Map"
+        android:onClick="showMap"
+        android:id="@+id/button"
+        android:layout_alignBottom="@+id/imageView"
+        android:layout_alignEnd="@+id/Location"
+        android:layout_alignStart="@+id/Location" />
+
+</RelativeLayout>
+
