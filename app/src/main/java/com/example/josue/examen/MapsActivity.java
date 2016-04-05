@@ -1,4 +1,4 @@
-package com.example.josue.examen;
+package com.example.hermon.geolocalizacion;
 
 import android.content.SharedPreferences;
 import android.support.v4.app.FragmentActivity;

@@ -1,6 +1,7 @@
-package com.example.josue.examen;
+package com.example.hermon.geolocalizacion;
 
 import android.Manifest;
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -11,17 +12,22 @@ import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.os.Build;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.location.LocationListener;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import java.io.IOException;
+import java.security.Provider;
 import java.util.List;
 import java.util.Locale;
 
-public class MainActivity extends AppCompatActivity  implements LocationListener {
+public class MainActivity extends AppCompatActivity implements LocationListener {
     public static final String PREFS_NAME = "MyPreferencesFile";
     LocationManager locationManager;
     String provider;
@@ -39,11 +45,11 @@ public class MainActivity extends AppCompatActivity  implements LocationListener
     }
 
     public void onLocationChanged(Location location) {
-        TextView latencia = (TextView) findViewById(R.id.LAtitude);
+        TextView latencia = (TextView) findViewById(R.id.Latitude);
         Double lat = location.getLatitude();
         String latText = String.valueOf(lat);
         latencia.setText(latText);
-        TextView lon = (TextView) findViewById(R.id.Longitude);
+        TextView lon = (TextView) findViewById(R.id.Longitud);
         Double lo = location.getLongitude();
         String lotext = String.valueOf(lo);
         lon.setText(lotext);
@@ -57,16 +63,16 @@ public class MainActivity extends AppCompatActivity  implements LocationListener
         } catch (IOException e) {
             e.printStackTrace();
         }
-        TextView addressT = (TextView) findViewById(R.id.Location);
+        TextView addressT = (TextView) findViewById(R.id.Address);
         addressT.setText(calle);
         TextView acura = (TextView) findViewById(R.id.Acuracy);
         float ac = location.getAccuracy();
         String acText = String.valueOf(ac);
         acura.setText(acText);
-        TextView sped = (TextView) findViewById(R.id.speed);
+        TextView speed = (TextView) findViewById(R.id.speed);
         float sp = location.getSpeed();
         String spText = String.valueOf(sp);
-        sped.setText(spText);
+        speed.setText(spText);
     }
 
     public void onStatusChanged(String provider, int status, Bundle extras) {
@@ -98,11 +104,11 @@ public class MainActivity extends AppCompatActivity  implements LocationListener
         if (location == null) {
             return;
         }
-        TextView latencia = (TextView) findViewById(R.id.LAtitude);
+        TextView latencia = (TextView) findViewById(R.id.Latitude);
         Double lat = location.getLatitude();
         String latText = String.valueOf(lat);
         latencia.setText(latText);
-        TextView lon = (TextView) findViewById(R.id.Longitude);
+        TextView lon = (TextView) findViewById(R.id.Longitud);
         Double lo = location.getLongitude();
         String lotext = String.valueOf(lo);
         lon.setText(lotext);
@@ -116,16 +122,16 @@ public class MainActivity extends AppCompatActivity  implements LocationListener
         } catch (IOException e) {
             e.printStackTrace();
         }
-        TextView addressT = (TextView) findViewById(R.id.Location);
+        TextView addressT = (TextView) findViewById(R.id.Address);
         addressT.setText(calle);
         TextView acura = (TextView) findViewById(R.id.Acuracy);
         float ac = location.getAccuracy();
         String acText = String.valueOf(ac);
         acura.setText(acText);
-        TextView sped = (TextView) findViewById(R.id.speed);
+        TextView speed = (TextView) findViewById(R.id.speed);
         float sp = location.getSpeed();
         String spText = String.valueOf(sp);
-        sped.setText(spText);
+        speed.setText(spText);
     }
 
     @Override
